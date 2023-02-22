@@ -107,5 +107,7 @@
       }
     }
   },
-  "defaultProject": "book-inventory"
+  "cli": {
+    "analytics": false
+  }
 }
