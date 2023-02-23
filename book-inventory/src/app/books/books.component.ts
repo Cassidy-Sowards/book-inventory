@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Book } from '../Interfaces/book';
+import { BOOKS } from '../mock-books';
 
 @Component({
   selector: 'app-books',
@@ -7,10 +8,13 @@ import { Book } from '../Interfaces/book';
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent {
-  book: Book = {
+ /* book: Book = {
     id: 1,
     title: "Maximum Ride: The Angel Experiment",
     author: "James Paterson",
     genre: "Sci-fi"
-  }
+  } */
+
+  books = BOOKS
+
 }
