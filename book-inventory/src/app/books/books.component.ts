@@ -8,13 +8,13 @@ import { BOOKS } from '../mock-books';
   styleUrls: ['./books.component.scss']
 })
 export class BooksComponent {
- /* book: Book = {
-    id: 1,
-    title: "Maximum Ride: The Angel Experiment",
-    author: "James Paterson",
-    genre: "Sci-fi"
-  } */
 
-  books = BOOKS
+  books = BOOKS;
+  selectedBook?: Book;
+
+  onSelect(book: Book){
+    this.selectedBook = book;
+  }
+
 
 }

@@ -4,12 +4,13 @@
 <div class="flex justify-center">
         <ul class="list-none">
             <li *ngFor="let book of books">
-                <div class="bg-white rounded-lg p-10 m-10 ">
-                    <p class="opacity-50">{{book.id}}</p>
+                <div class="bg-white rounded-lg p-10 m-10 hover:opacity-50 cursor-pointer" (click)="onSelect(book)">
                     <p>{{book.title}}</p>
-                    <p>{{book.author}}</p>
-                    <p>{{book.genre}}</p>
                 </div>
+                <div *ngIf="book === selectedBook">
+                    <app-book-detail [book]="selectedBook"></app-book-detail>
+                </div>
+                
              </li>
         </ul>
 </div>
