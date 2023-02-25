@@ -1,9 +1,16 @@
-<h2 class="text-2xl">My books</h2>
-<ul class="list-none">
-    <li *ngFor="let book of books">
-            <span>{{book.id}}</span>
-            <span>{{book.title}}</span>
-            <span>{{book.author}}</span>
-            <span>{{book.genre}}</span>
-    </li>
-</ul>
+<div class="flex justify-center">
+    <h2 class="text-2xl">My Books</h2>
+</div>
+<div class="flex justify-center">
+        <ul class="list-none">
+            <li *ngFor="let book of books">
+                <div class="bg-white rounded-lg p-10 m-10 hover:opacity-50 cursor-pointer" (click)="onSelect(book)">
+                    <p>{{book.title}}</p>
+                </div>
+                <div *ngIf="book === selectedBook">
+                    <app-book-detail [book]="selectedBook"></app-book-detail>
+                </div>
+                
+             </li>
+        </ul>
+</div>
