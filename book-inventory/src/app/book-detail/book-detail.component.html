@@ -1,8 +1,13 @@
-<div class="bg-white m-10 p-10 rounded-lg" *ngIf="book">
+<div class="bg-white my-10 ml-28 p-10 rounded-lg" *ngIf="book">
     <h2>{{book.title | uppercase}} Details</h2>
-    <div><span>id: </span>{{book.id}}</div>
-    <div><span>author: </span>{{book.author}}</div>
-    <div><span>genre: </span>{{book.genre}}</div>
+    <div><span>ID: </span>{{book.id}}</div>
+    <div><span>Author: </span>{{book.author}}</div>
+    <div><span>Genre: </span>{{book.genre}}</div>
+    <div class="ml-2" *ngIf="book.review">
+        <p class="font-bold">Review: </p>
+        <div><span>Rating:</span> {{book.review.rating}}</div>
+        <div><span>Comment: </span>{{book.review.comment}}</div>
+    </div>
     <div>
 
     </div>

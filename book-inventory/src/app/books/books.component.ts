@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { Book } from '../Interfaces/book';
+
+import { Book } from '../interfaces/book';
+
 import { BOOKS } from '../mock-books';
 
 @Component({
