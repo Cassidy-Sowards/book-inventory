@@ -17,7 +17,9 @@ export class BooksComponent implements OnInit {
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
-    this.books = this.bookService.getBooks();
+    this.bookService.getBooks().subscribe((books) => this.books = books);
+                                  //grab return value then set local variable to return value
+    
   }
 
   onSelect(book: Book){
