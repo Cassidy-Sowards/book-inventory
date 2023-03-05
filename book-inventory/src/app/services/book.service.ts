@@ -9,11 +9,20 @@ import { BOOKS } from '../mock-books';
 })
 export class BookService {
 
-  private apiUrl = "http://localhost:5000/books"
+  private apiUrl = "http://localhost:5000/books"; 
+
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 
   constructor(private http:HttpClient) { }
 
   getBooks(): Observable<Book[]> {
     return this.http.get<Book[]>(this.apiUrl);
+  }
+
+  deleteBook(id: number): Observable<Book>{
+    const url = `${this.apiUrl}/${id}`
+    return this.http.delete<Book>(url, this.httpOptions)
   }
 }

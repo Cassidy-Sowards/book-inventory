@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faSquareXmark } from '@fortawesome/free-solid-svg-icons'
 import { BookService } from '../services/book.service';
 
 import { Book } from '../interfaces/book';
@@ -14,6 +15,8 @@ export class BooksComponent implements OnInit {
   books: Book[] = [];
   selectedBook?: Book;
 
+  faSquareXmark = faSquareXmark
+
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
@@ -24,6 +27,11 @@ export class BooksComponent implements OnInit {
 
   onSelect(book: Book){
     this.selectedBook = book;
+  }
+
+  removeBook(book: Book): void {
+    this.books = this.books.filter(b => b != book);
+    this.bookService.deleteBook(book.id).subscribe();
   }
 
 
