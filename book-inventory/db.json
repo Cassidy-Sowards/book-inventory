@@ -1,25 +1,15 @@
 {
   "books": [
     {
-      "id": 1,
-      "title": "Maximum Ride: The Angel Experiment",
-      "author": "James Patterson",
-      "genre": "Sci-fi",
-        "reveiw": {
-          "rating": "4/5",
-          "comment": "Action packed, great escape read"
-        }
-    },
-    {
       "id": 2,
       "title": "Maximum Ride: School's Out - Forever",
-      "author":"James Patterson",
+      "author": "James Patterson",
       "genre": "Sci-fi"
     },
     {
-      "id": 3, 
+      "id": 3,
       "title": "Maximum Ride: Saving the World and Other Extreme Sports",
-      "author": "James Patterson", 
+      "author": "James Patterson",
       "genre": "Sci-fi"
     },
     {
@@ -40,4 +30,3 @@
     }
   ]
 }
-
