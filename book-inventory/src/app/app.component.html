@@ -1,6 +1,11 @@
-<div class="bg-white p-10 flex mb-10 justify-center">
-    <h1 class="text-3xl">{{title}}</h1>
+<div class="bg-white p-10 flex justify-center">
+    <h1 routerLink="/" class="text-3xl cursor-pointer hover:opacity-50">{{title}}</h1>
+</div>
+<div class="bg-white flex p-3 mb-10 justify-center">
+    <nav>
+        <a class="hover:border-b-2 border-black" routerLink="/add-book">Add a book</a>
+    </nav>
 </div>
 
 
-<app-books></app-books>
+<router-outlet></router-outlet>
