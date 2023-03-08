@@ -8,9 +8,19 @@ import { Book } from '../interfaces/book';
 })
 export class AddBookComponent implements OnInit {
 
+  title: string = "";
+  author: string = "";
+  genre: string = "";
+  addReview: boolean = false;
+  rating: string = "";
+  comment: string = "";
 
   ngOnInit(): void {
     
+  }
+
+  onSubmit(): void {
+
   }
 
 }
