@@ -11,7 +11,6 @@ export class AddBookComponent implements OnInit {
   title: string = "";
   author: string = "";
   genre: string = "";
-  addReview: boolean = false;
   rating: string = "";
   comment: string = "";
 
@@ -19,8 +18,19 @@ export class AddBookComponent implements OnInit {
     
   }
 
-  onSubmit(): void {
 
+  onSubmit(): void {
+    if(this.title === ""){
+      alert("Please enter a title");
+      return
+    }
+    if(this.author === ""){
+      alert("Please enter an author ");
+      return
+    }
+
+    
+    
   }
 
 }
