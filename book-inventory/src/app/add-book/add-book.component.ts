@@ -19,6 +19,35 @@ export class AddBookComponent implements OnInit {
   }
 
 
+createSearchRequest(): object {
+  let request = {
+    title: "",
+    author: "",
+    genre: "",
+    review: {
+    }
+  } as any;
+
+  request.title = this.title;
+  request.author = this.author;
+
+  if(this.genre){
+    request.genre = this.genre
+  }
+  
+  if(this.rating){
+    request.review.rating = this.rating;
+  }
+  
+  if(this.comment){
+    request.review.comment = this.comment;
+  }
+  
+  console.log(request);
+
+  return request;
+}
+
   onSubmit(): void {
     if(this.title === ""){
       alert("Please enter a title");
@@ -29,6 +58,7 @@ export class AddBookComponent implements OnInit {
       return
     }
 
+  this.createSearchRequest();
     
     
   }
