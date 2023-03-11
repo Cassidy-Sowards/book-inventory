@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from '../services/book.service';
 import { Book } from '../interfaces/book';
 
 @Component({
@@ -13,6 +14,8 @@ export class AddBookComponent implements OnInit {
   genre: string = "";
   rating: string = "";
   comment: string = "";
+
+  constructor(private bookService: BookService){}
 
   ngOnInit(): void {
     
@@ -58,8 +61,9 @@ createSearchRequest(): object {
       return
     }
 
-  this.createSearchRequest();
+  let newBook = this.createSearchRequest();
     
+  this.bookService.addBook(newBook as Book);
     
   }
 
