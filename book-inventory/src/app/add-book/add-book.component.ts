@@ -24,6 +24,7 @@ export class AddBookComponent implements OnInit {
 
 createSearchRequest(): object {
   let request = {
+    id: 0,
     title: "",
     author: "",
     genre: "",
@@ -31,6 +32,7 @@ createSearchRequest(): object {
     }
   } as any;
 
+  request.id = this.bookService.getNewBookId();
   request.title = this.title;
   request.author = this.author;
 
