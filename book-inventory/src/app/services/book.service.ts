@@ -22,8 +22,8 @@ export class BookService {
     return this.http.get<Book[]>(this.apiUrl);
   }
 
-  deleteBook(id: number): Observable<Book>{
-    const url = `${this.apiUrl}/${id}`
+  deleteBook(b: Book): Observable<Book>{
+    const url = `${this.apiUrl}/${b.id}`
     return this.http.delete<Book>(url, this.httpOptions)
   }
 
@@ -45,10 +45,10 @@ export class BookService {
   }
 
   //helper method for determining the ID of the next book to be added
-  getNewBookId(): number {
+  /* getNewBookId(): number {
     console.log("Current Books is " + this.currentBooks);
     let currentBook = this.currentBooks[this.currentBooks.length -1];
     let currentBookId = currentBook.id
     return currentBookId + 1;
-  }
+  } */
  }

@@ -23,7 +23,7 @@ export class BooksComponent implements OnInit {
     this.bookService.getBooks().subscribe((books) => this.books = books);
                                   //grab return value then set local variable to return value
     console.log(this.books);
-    this.bookService.storeBooks(this.books);
+    //this.bookService.storeBooks(this.books);
     
   }
 
@@ -33,7 +33,7 @@ export class BooksComponent implements OnInit {
 
   removeBook(book: Book): void {
     this.books = this.books.filter(b => b != book);
-    this.bookService.deleteBook(book.id).subscribe();
+    this.bookService.deleteBook(book).subscribe();
   }
 
 

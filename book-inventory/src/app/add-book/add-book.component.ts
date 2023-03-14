@@ -32,7 +32,7 @@ createSearchRequest(): object {
     }
   } as any;
 
-  request.id = this.bookService.getNewBookId();
+  //request.id = this.bookService.getNewBookId();
   request.title = this.title;
   request.author = this.author;
 
