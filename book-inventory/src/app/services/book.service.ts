@@ -10,6 +10,7 @@ import { BOOKS } from '../mock-books';
 export class BookService {
 
   private apiUrl = "http://localhost:5000/books"; 
+  private currentBooks: Book[] = []; 
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -21,8 +22,8 @@ export class BookService {
     return this.http.get<Book[]>(this.apiUrl);
   }
 
-  deleteBook(id: number): Observable<Book>{
-    const url = `${this.apiUrl}/${id}`
+  deleteBook(b: Book): Observable<Book>{
+    const url = `${this.apiUrl}/${b.id}`
     return this.http.delete<Book>(url, this.httpOptions)
   }
 
@@ -30,4 +31,24 @@ export class BookService {
     console.log("Inside add book");
    return this.http.post<Book>(this.apiUrl, book, this.httpOptions)
   }
+
+  //storing all the current books on the service
+  storeBooks(cb: Book[]) {
+    console.log("Inside store books passed is " + cb)
+    this.currentBooks = cb;
+    console.log("currentBooks in service is" + this.currentBooks);
+  }
+
+  //retrieving stored books on service
+  retrieveStoredBooks(): Book[] {
+    return this.currentBooks;
+  }
+
+  //helper method for determining the ID of the next book to be added
+  /* getNewBookId(): number {
+    console.log("Current Books is " + this.currentBooks);
+    let currentBook = this.currentBooks[this.currentBooks.length -1];
+    let currentBookId = currentBook.id
+    return currentBookId + 1;
+  } */
  }

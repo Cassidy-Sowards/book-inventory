@@ -1,9 +1,9 @@
 import { Review } from "./review";
 
 export interface Book {
-    id: number;
+    id?: number;
     title: string;
     author: string;
-    genre: string;
+    genre?: string;
     review?: Review;
 }
