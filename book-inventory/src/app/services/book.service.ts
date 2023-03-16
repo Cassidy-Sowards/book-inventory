@@ -40,9 +40,9 @@ export class BookService {
   }
 
   //retrieving stored books on service
-  retrieveStoredBooks(): Book[] {
+ /* retrieveStoredBooks(): Book[] {
     return this.currentBooks;
-  }
+  } */
 
   //helper method for determining the ID of the next book to be added
   /* getNewBookId(): number {
