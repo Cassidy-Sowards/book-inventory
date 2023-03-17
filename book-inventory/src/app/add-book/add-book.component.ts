@@ -24,15 +24,11 @@ export class AddBookComponent implements OnInit {
 
 createSearchRequest(): object {
   let request = {
-    id: 0,
-    title: "",
-    author: "",
-    genre: "",
     review: {
     }
   } as any;
 
-  request.id = 500
+  //request.id = 500
   request.title = this.title;
   request.author = this.author;
 
