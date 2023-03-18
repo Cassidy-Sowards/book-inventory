@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { BookService } from '../services/book.service';
+import { BooksComponent } from '../books/books.component';
 import { Book } from '../interfaces/book';
 
 @Component({
@@ -24,15 +25,11 @@ export class AddBookComponent implements OnInit {
 
 createSearchRequest(): object {
   let request = {
-    id: 0,
-    title: "",
-    author: "",
-    genre: "",
-    review: {
+    "review": {
     }
   } as any;
 
-  request.id = 500
+  //request.id = 500
   request.title = this.title;
   request.author = this.author;
 
@@ -63,10 +60,18 @@ createSearchRequest(): object {
       return
     }
 
-  let newBook = this.createSearchRequest();
-    
-  this.bookService.addBook(newBook as Book);
-    
+  const newBook = {
+    title: this.title,
+    author: this.author,
+    genre: this.genre,
+    review: {
+      rating: this.rating,
+      comment: this.comment
+    }
   }
+
+this.bookService.addBook(newBook as Book).subscribe();
+    
+}
 
 }
