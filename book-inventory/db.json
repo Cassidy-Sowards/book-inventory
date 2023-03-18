@@ -27,6 +27,26 @@
       "title": "One Last Stop",
       "author": "Casey McQuinston",
       "genre": "Romance"
+    },
+    {
+      "title": "The Seas",
+      "author": "Samantha Hunt",
+      "genre": "Magical Realism",
+      "review": {
+        "rating": "5/5",
+        "comment": "Unreliable narrator, amazing"
+      },
+      "id": 6
+    },
+    {
+      "title": "Finding Me",
+      "author": "Viola Davis",
+      "genre": "Memoir",
+      "review": {
+        "rating": "5/5",
+        "comment": "Loved listening to this. Great story with great themes"
+      },
+      "id": 7
     }
   ]
 }

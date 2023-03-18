@@ -30,6 +30,7 @@ export class BookService {
   addBook(book: Book): Observable<Book> {
     console.log("Inside add book");
     console.log("request is");
+    console.log(book);
    return this.http.post<Book>(this.apiUrl, book, this.httpOptions)
   }
 
