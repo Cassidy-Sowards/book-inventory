@@ -24,7 +24,7 @@ export class AddBookComponent implements OnInit {
 
 createSearchRequest(): object {
   let request = {
-    review: {
+    "review": {
     }
   } as any;
 

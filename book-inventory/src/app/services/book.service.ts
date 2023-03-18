@@ -30,7 +30,7 @@ export class BookService {
   addBook(book: Book): Observable<Book> {
     console.log("Inside add book");
     console.log("request is");
-   return this.http.post<Book>(this.apiUrl, JSON.stringify(book), this.httpOptions)
+   return this.http.post<Book>(this.apiUrl, book, this.httpOptions)
   }
 
   //storing all the current books on the service
