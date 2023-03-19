@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { BooksComponent } from './books/books.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { AddBookComponent } from './add-book/add-book.component';
+import { UpdateBookComponent } from './update-book/update-book.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BooksComponent,
     BookDetailComponent,
-    AddBookComponent
+    AddBookComponent,
+    UpdateBookComponent
   ],
   imports: [
     BrowserModule,

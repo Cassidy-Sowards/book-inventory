@@ -8,8 +8,16 @@
         <div><span>Rating:</span> {{book.review.rating}}</div>
         <div><span>Comment: </span>{{book.review.comment}}</div>
     </div>
+    <button 
+    class="bg-green-200 text-gray-700 text-sm mt-2 w-2/4 p-4 rounded-md hover:bg-gray-400"
+    (click)="onUpdateClick()">
+    Update this book</button>
     <div>
 
     </div>
   
+  </div>
+
+  <div *ngIf="updateBook">
+    <app-update-book></app-update-book>
   </div>

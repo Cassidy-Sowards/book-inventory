@@ -10,5 +10,10 @@ import { Book } from '../interfaces/book';
 export class BookDetailComponent {
 
   @Input() book?: Book;
+  updateBook?: Book;
+
+  onUpdateClick(): void {
+    this.updateBook = this.book;
+  }
 
 }
