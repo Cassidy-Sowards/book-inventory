@@ -13,14 +13,25 @@ export class UpdateBookComponent implements OnInit {
 @Output() dontShow: EventEmitter<boolean> = new EventEmitter;
 faSquareXmark = faSquareXmark;
 
-constructor() {}
+title: string = "";
+author: string = "";
+genre: string = "";
+rating: string = "";
+comment: string = "";
 
-ngOnInit() {
+  constructor() {}
 
-}
+  ngOnInit() {
+    this.title = this.book?.title as string;
+    this.author = this.book?.author as string;
+    this.genre = this.book?.genre as string;
+    this.rating = this.book?.review?.rating as string;
+    this.comment = this.book?.review?.comment as string;
 
-clear() {
+  }
+
+  clear() {
   this.dontShow.emit(true);
-}
+  }
 
 }

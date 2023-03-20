@@ -1,5 +1,31 @@
 
-<div class="bg-white my-10 ml-28 p-10 rounded-lg">
-    <span (click)="clear()" class="ml-5 text-2xl hover:opacity-30"> <fa-icon [icon]="faSquareXmark"></fa-icon></span>
-    <h3>Update this Book</h3>
+<div class="bg-white flex flex-row my-10 ml-28 p-10 rounded-lg">
+    <h3>Update this Book:</h3>
+    <span (click)="clear()" class="ml-5 my-0 text-xl hover:opacity-30"> <fa-icon [icon]="faSquareXmark"></fa-icon></span>
+    <div class="flex flex-col">
+        <form>
+            <label class="block">
+                <span>Title</span>
+                <input type="text" [(ngModel)]="title" name="title" class="form-input block border-2 border-gray-700">
+              </label>
+              <label class="block">
+                <span>Author</span>
+                <input type="text" [(ngModel)]="author" name="author" class="form-input block border-2 border-gray-700">
+              </label>
+              <label class="block">
+                <span>Genre</span>
+                <input type="text" [(ngModel)]="genre" name="genre" class="form-input block border-2 border-gray-700">
+              </label>
+                <label class="block">
+                    <span>Rating</span>
+                    <input type="text" [(ngModel)]="rating" name="rating" class="form-input block border-2 border-gray-700">
+                </label>
+                <label class="block">
+                    <span>Review:</span>
+                    <textarea [(ngModel)]="comment" name="review" class="form-textarea block w-1/2 border-2 border-gray-700">
+                    </textarea>
+                </label>
+        </form>
+    </div>
+
 </div>
