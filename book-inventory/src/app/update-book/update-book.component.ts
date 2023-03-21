@@ -9,24 +9,23 @@ import { faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 })
 export class UpdateBookComponent implements OnInit {
 
-@Input() book?: Book;
+@Input() book: Book = {
+  title: "",
+  author: "",
+  genre: ""
+};
 @Output() dontShow: EventEmitter<boolean> = new EventEmitter;
 faSquareXmark = faSquareXmark;
-
-title: string = "";
-author: string = "";
-genre: string = "";
 rating: string = "";
 comment: string = "";
 
   constructor() {}
 
   ngOnInit() {
-    this.title = this.book?.title as string;
-    this.author = this.book?.author as string;
-    this.genre = this.book?.genre as string;
-    this.rating = this.book?.review?.rating as string;
-    this.comment = this.book?.review?.comment as string;
+    if(this.book.review){
+      this.rating = this.book.review.rating;
+      this.comment = this.book.review.comment;
+    }
 
   }
 
