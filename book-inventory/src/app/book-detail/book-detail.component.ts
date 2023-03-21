@@ -16,4 +16,10 @@ export class BookDetailComponent {
     this.updateBook = this.book;
   }
 
+  clearUpdateBook(event: boolean) {
+    if(event === true){
+      this.updateBook = undefined;
+    }
+  }
+
 }

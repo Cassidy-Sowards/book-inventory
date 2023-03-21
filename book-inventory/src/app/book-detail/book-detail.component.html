@@ -19,5 +19,5 @@
   </div>
 
   <div *ngIf="updateBook">
-    <app-update-book></app-update-book>
+    <app-update-book [book]="updateBook" (dontShow)="clearUpdateBook($event)"></app-update-book>
   </div>
