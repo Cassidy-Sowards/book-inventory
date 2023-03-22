@@ -25,6 +25,14 @@
                     <textarea [(ngModel)]="comment" name="review" class="form-textarea block w-1/2 border-2 border-gray-700">
                     </textarea>
                 </label>
+                <label class="block">
+                    <button
+                    type="submit"
+                    class="bg-green-200 text-gray-700 mt-2 p-4 rounded-md hover:bg-gray-400"
+                    (click)="onSubmit()">
+                    Submit
+                    </button>
+                  </label>
         </form>
     </div>
 
