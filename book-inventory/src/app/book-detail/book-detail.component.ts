@@ -11,6 +11,7 @@ export class BookDetailComponent {
 
   @Input() book?: Book;
   updateBook?: Book;
+  newUpdateBook?:Book;
 
   onUpdateClick(): void {
     this.updateBook = this.book;
@@ -20,6 +21,11 @@ export class BookDetailComponent {
     if(event === true){
       this.updateBook = undefined;
     }
+  }
+
+  uppdateCurrentBook(event: Book){
+    this.newUpdateBook = event;
+    this.newUpdateBook.id = this.book?.id
   }
 
 }

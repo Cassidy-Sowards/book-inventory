@@ -15,6 +15,7 @@ export class UpdateBookComponent implements OnInit {
   genre: ""
 };
 @Output() dontShow: EventEmitter<boolean> = new EventEmitter;
+@Output() updatedBook: EventEmitter<Book> = new EventEmitter;
 faSquareXmark = faSquareXmark;
 rating: string = "";
 comment: string = "";
@@ -31,6 +32,27 @@ comment: string = "";
 
   clear() {
   this.dontShow.emit(true);
+  }
+
+  onSubmit(){
+
+    let upBook: Book = this.book
+
+    if(this.rating != "" && this.comment != ""){
+      upBook.review = {
+        rating: this.rating,
+        comment: this.comment
+      }
+    }
+    else if(this.rating != "" && this.comment === "") {
+      alert("Please add both a rating and review, do not leave one blank");
+    }
+    else if(this.rating === "" && this.comment != ""){
+      alert("Please add both a rating and review, do not leave one blank");
+    }
+
+    this.updatedBook.emit(upBook);
+
   }
 
 }
