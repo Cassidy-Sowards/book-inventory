@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { BookService } from '../services/book.service';
 
 import { Book } from '../interfaces/book';
 
@@ -7,11 +8,17 @@ import { Book } from '../interfaces/book';
   templateUrl: './book-detail.component.html',
   styleUrls: ['./book-detail.component.scss']
 })
-export class BookDetailComponent {
+export class BookDetailComponent implements OnInit {
 
   @Input() book?: Book;
   updateBook?: Book;
   newUpdateBook?:Book;
+
+  constructor(private bookService: BookService){}
+
+  ngOnInit(): void {
+    
+  }
 
   onUpdateClick(): void {
     this.updateBook = this.book;
@@ -24,8 +31,11 @@ export class BookDetailComponent {
   }
 
   uppdateCurrentBook(event: Book){
+    console.log("Inside update in the details page");
     this.newUpdateBook = event;
     this.newUpdateBook.id = this.book?.id
+    this.bookService.updateBook(this.newUpdateBook).subscribe();
+    //window.location.reload();
   }
 
 }

@@ -28,12 +28,15 @@ export class BookService {
   }
 
   addBook(book: Book): Observable<Book> {
-   return this.http.post<Book>(this.apiUrl, book, this.httpOptions)
+   return this.http.post<Book>(this.apiUrl, book, this.httpOptions);
   }
 
-  /* updateBook(book: Book): Observable<Book> {
-    
-  } */
+   updateBook(book: Book): Observable<Book> {
+    console.log("Inside service");
+    const url = `${this.apiUrl}/${book.id}`
+
+    return this.http.put<Book>(url, book, this.httpOptions);
+  } 
 
   //storing all the current books on the service
   storeBooks(cb: Book[]) {

@@ -4,7 +4,11 @@
       "id": 2,
       "title": "Maximum Ride: School's Out - Forever",
       "author": "James Patterson",
-      "genre": "Sci-fi"
+      "genre": "Sci-fi",
+      "review": {
+        "rating": "5/5",
+        "comment": "Great plot continuity"
+      }
     },
     {
       "id": 3,
