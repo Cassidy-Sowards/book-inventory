@@ -50,7 +50,7 @@ comment: string = "";
     else if(this.rating === "" && this.comment != ""){
       alert("Please add both a rating and review, do not leave one blank");
     }
-
+    console.log("submitting and emitting");
     this.updatedBook.emit(upBook);
 
   }
