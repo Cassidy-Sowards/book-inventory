@@ -21,14 +21,9 @@ export class BooksComponent implements OnInit {
   ngOnInit(): void {
     this.bookService.getBooks().subscribe((books) => this.books = books);
                                   //grab return value then set local variable to return value
-    console.log(this.books);
-    //this.bookService.storeBooks(this.books);
     
   }
 
-  onSelect(book: Book){
-    this.selectedBook = book;
-  }
 
   removeBook(book: Book): void {
     this.books = this.books.filter(b => b != book);

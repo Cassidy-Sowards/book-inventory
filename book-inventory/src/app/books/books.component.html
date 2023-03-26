@@ -5,13 +5,11 @@
         <ul class="list-none">
             <li *ngFor="let book of books">
                 <div class="bg-white rounded-lg p-10 m-10 cursor-pointer">
-                    <span (click)="onSelect(book)" class="hover:opacity-50">{{book.title}}</span>
-                    <span (click)="removeBook(book)" class="ml-5 text-2xl hover:opacity-30"> <fa-icon [icon]="faSquareXmark"></fa-icon></span>
+                    <a routerLink="/detail/{{book.id}}">
+                        <span class="hover:opacity-50">{{book.title}}</span>
+                        <span (click)="removeBook(book)" class="ml-5 text-2xl hover:opacity-30"> <fa-icon [icon]="faSquareXmark"></fa-icon></span>
+                    </a>
                 </div>
-                <div *ngIf="book === selectedBook">
-                    <app-book-detail [book]="selectedBook"></app-book-detail>
-                </div>
-                
              </li>
         </ul>
 </div>
