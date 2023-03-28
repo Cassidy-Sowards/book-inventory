@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSquareXmark } from '@fortawesome/free-solid-svg-icons'
+import { faSquareXmark, faBook } from '@fortawesome/free-solid-svg-icons'
 import { BookService } from '../services/book.service';
 import { Book } from '../interfaces/book';
 
@@ -14,7 +14,8 @@ export class BooksComponent implements OnInit {
   books: Book[] = [];
   selectedBook?: Book;
 
-  faSquareXmark = faSquareXmark
+  faSquareXmark = faSquareXmark;
+  faBook = faBook;
 
   constructor(private bookService: BookService) {}
 
