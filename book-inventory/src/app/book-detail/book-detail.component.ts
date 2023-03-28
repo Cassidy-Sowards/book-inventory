@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BookService } from '../services/book.service';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
+import { BookService } from '../services/book.service';
 import { Book } from '../interfaces/book';
 
 @Component({
@@ -14,10 +16,10 @@ export class BookDetailComponent implements OnInit {
   updateBook?: Book;
   newUpdateBook?:Book;
 
-  constructor(private bookService: BookService){}
+  constructor(private bookService: BookService, private route: ActivatedRoute, private location: Location){}
 
   ngOnInit(): void {
-    
+    this.getBook();
   }
 
   onUpdateClick(): void {
@@ -28,6 +30,11 @@ export class BookDetailComponent implements OnInit {
     if(event === true){
       this.updateBook = undefined;
     }
+  }
+
+  getBook(): void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.bookService.getBook(id).subscribe(book => this.book = book);
   }
 
   uppdateCurrentBook(event: Book){

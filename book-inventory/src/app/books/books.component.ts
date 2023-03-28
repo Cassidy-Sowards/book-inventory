@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faSquareXmark } from '@fortawesome/free-solid-svg-icons'
+import { faSquareXmark, faBook } from '@fortawesome/free-solid-svg-icons'
 import { BookService } from '../services/book.service';
 import { Book } from '../interfaces/book';
 
@@ -14,21 +14,17 @@ export class BooksComponent implements OnInit {
   books: Book[] = [];
   selectedBook?: Book;
 
-  faSquareXmark = faSquareXmark
+  faSquareXmark = faSquareXmark;
+  faBook = faBook;
 
   constructor(private bookService: BookService) {}
 
   ngOnInit(): void {
     this.bookService.getBooks().subscribe((books) => this.books = books);
                                   //grab return value then set local variable to return value
-    console.log(this.books);
-    //this.bookService.storeBooks(this.books);
     
   }
 
-  onSelect(book: Book){
-    this.selectedBook = book;
-  }
 
   removeBook(book: Book): void {
     this.books = this.books.filter(b => b != book);
