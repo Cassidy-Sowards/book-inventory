@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { faSquareXmark, faBook } from '@fortawesome/free-solid-svg-icons'
+
+import { faSquareXmark, faBook } from '@fortawesome/free-solid-svg-icons';
+
+
 import { BookService } from '../services/book.service';
 import { Book } from '../interfaces/book';
 
