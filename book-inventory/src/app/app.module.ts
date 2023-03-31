@@ -11,6 +11,7 @@ import { BooksComponent } from './books/books.component';
 import { BookDetailComponent } from './book-detail/book-detail.component';
 import { AddBookComponent } from './add-book/add-book.component';
 import { UpdateBookComponent } from './update-book/update-book.component';
+import { WarningDialogComponent } from './books/warning-dialog/warning-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { UpdateBookComponent } from './update-book/update-book.component';
     BooksComponent,
     BookDetailComponent,
     AddBookComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    WarningDialogComponent,
+  
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { UpdateBookComponent } from './update-book/update-book.component';
     MatDialogModule
   ],
   providers: [],
+  entryComponents:[WarningDialogComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
