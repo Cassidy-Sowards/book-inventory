@@ -5,7 +5,7 @@ A project by Cassidy Sowards
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
-This project was created with TailwindCSS
+This project was created with TailwindCSS and uses Angular Material
 
 ## Development server
 
