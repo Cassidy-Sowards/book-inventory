@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 import { faSquareXmark, faBook } from '@fortawesome/free-solid-svg-icons';
 
 
 import { BookService } from '../services/book.service';
 import { Book } from '../interfaces/book';
+import { WarningDialogComponent } from './warning-dialog/warning-dialog.component';
 
 
 @Component({
@@ -20,7 +22,7 @@ export class BooksComponent implements OnInit {
   faSquareXmark = faSquareXmark;
   faBook = faBook;
 
-  constructor(private bookService: BookService) {}
+  constructor(private bookService: BookService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.bookService.getBooks().subscribe((books) => this.books = books);
@@ -30,8 +32,20 @@ export class BooksComponent implements OnInit {
 
 
   removeBook(book: Book): void {
-    this.books = this.books.filter(b => b != book);
-    this.bookService.deleteBook(book).subscribe();
+    this.openDialog();
+   // this.books = this.books.filter(b => b != book);
+    //this.bookService.deleteBook(book).subscribe();
+  }
+
+  openDialog(){
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.height = "200px";
+    dialogConfig.width = "250px";
+
+    this.dialog.open(WarningDialogComponent, dialogConfig);
   }
 
 
