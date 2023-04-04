@@ -8,8 +8,16 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class WarningDialogComponent {
 
-  constructor(){
+  constructor(private dialogRef: MatDialogRef<WarningDialogComponent>){
 
+  }
+
+  onClose() {
+    this.dialogRef.close("cancel");
+  }
+
+  onSubmit() {
+    this.dialogRef.close("submit");
   }
 
 }

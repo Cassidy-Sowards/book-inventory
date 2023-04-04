@@ -43,9 +43,18 @@ export class BooksComponent implements OnInit {
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.height = "200px";
-    dialogConfig.width = "250px";
+    dialogConfig.width = "350px";
 
-    this.dialog.open(WarningDialogComponent, dialogConfig);
+    const dialogoRef = this.dialog.open(WarningDialogComponent, dialogConfig);
+
+    dialogoRef.afterClosed().subscribe(result => {
+      if(result === "cancel") {
+        console.log("canceled");
+      }
+      else if(result === "submit"){
+        console.log("ready to submit");
+      }
+    })
   }
 
 
