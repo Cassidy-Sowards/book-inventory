@@ -32,12 +32,12 @@ export class BooksComponent implements OnInit {
 
 
   removeBook(book: Book): void {
-    this.openDialog();
+    this.openDialog(book);
    // this.books = this.books.filter(b => b != book);
     //this.bookService.deleteBook(book).subscribe();
   }
 
-  openDialog(){
+  openDialog(book:Book){
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
@@ -52,7 +52,9 @@ export class BooksComponent implements OnInit {
         console.log("canceled");
       }
       else if(result === "submit"){
-        console.log("ready to submit");
+        //console.log("ready to submit");
+        this.books = this.books.filter(b => b != book);
+        this.bookService.deleteBook(book).subscribe();
       }
     })
   }
