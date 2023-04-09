@@ -3,7 +3,7 @@
 
 A project by Cassidy Sowards 
 
-Url is https://cassidysowards.com
+https://cassidysowards.com
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
