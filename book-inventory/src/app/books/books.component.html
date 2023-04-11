@@ -4,12 +4,14 @@
 <div class="flex justify-center">
         <ul class="list-none">
             <li *ngFor="let book of books">
-                <div class="grid grid-rows-3 bg-white rounded-lg p-10 m-10 cursor-pointer">
+                <div class="grid grid-rows-3 content-center bg-white rounded-lg p-10 m-10 cursor-pointer">
                     <div class="col-span-3 justify-self-end">
                         <span (click)="removeBook(book)"  class="hover:opacity-30"><fa-icon class="ml-5 text-xl" [icon]="faSquareXmark"></fa-icon></span>
-                    
                     </div>
-                    <div class="col-span-3 justify-self-center">
+                    <div class="col-span-1 justify-self-center">
+                        <fa-icon class="text-4xl" [icon]="faBook"></fa-icon>
+                    </div>
+                    <div class="col-span-2 justify-self-start items-center break-words" [class.ml-10]="book.title.length > 50" [class.ml-0]="book.title.length <= 50">
                         <a routerLink="/detail/{{book.id}}">
                             <span class="hover:opacity-50">{{book.title}}</span>
                         </a>
